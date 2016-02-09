@@ -5,9 +5,7 @@ namespace Givecookie;
 use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\Event;
-use pocketmine\block\Block;
-use pocketmine\item\item;
+use pocketmine\item\Item;
 use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener{
@@ -25,15 +23,10 @@ class Main extends PluginBase implements Listener{
 		 $block = $event->getPlayer()->getLevel()->getBlock($event->getPlayer()->getPosition()->subtract(0,1,0));
 	      if($block->getId() === 35 && $block->getDamage() ===1 ) {
 	      	   $player = $event->getPlayer ();
-                   $slot = $event->getPlayer->getInventory()->getItemInHand();
-  	      	   $player->getInventory()->addItem(new Item(357, 0, 1 ));
- 	      	   $slot->getID() == ITEM::COOKIE);
+  	      	   $player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1 ));
 	      	   $player->sendTip(TextFormat::GRAY . ">" . TextFormat::GREEN . "You've recieved a cookie!");
-	                
-	      }
-
-    
         }
+      }
 
 }
 
