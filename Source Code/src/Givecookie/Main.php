@@ -8,6 +8,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\Event;
 use pocketmine\block\Block;
 use pocketmine\item\item;
+use pocketmine\item\Cookie;
 
 class Main extends PluginBase implements Listener{
 	 public function onLoad() {
@@ -25,6 +26,7 @@ class Main extends PluginBase implements Listener{
 		 public function onPlayerMove(PlayerMoveEvent $event) {
 		 $block = $event->getPlayer()->getLevel()->getBlock($event->getPlayer()->getPosition()->subtract(0,1,0));
 	      if($block->getId() === 35 && $block->getDamage() ===1 ) {
+	           $event->getPlayer()->getInventory()->addItem(newItem(ITEM::COOKIE, 0, 1 ));
 	                
 	      }
 
