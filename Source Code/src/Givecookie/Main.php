@@ -3,6 +3,7 @@
 namespace Givecookie;
 
 use pocketmine\event\player\PlayerMoveEvent;
+use pocketmine\network\protocol\PlayerActionPacket;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\item\Item;
