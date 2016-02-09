@@ -21,7 +21,7 @@ class Main extends PluginBase implements Listener{
 	}
 	public function onPlayerMove(PlayerMoveEvent $event) {
 		$player = $event->getPlayer();
-		$block = $player->level->getBlock(new Vector3((int) $player->x, (int) $player->y, (int) $player->z));
+		$block = $player->level->getBlock(new Vector3((int) $player->x, (int) ($player->y - 1), (int) $player->z));
 		if($block->getId() === 35 && $block->getDamage() === 1) {
 			$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
 			$player->sendTip(TextFormat::GRAY . ">" . TextFormat::GREEN . "You've recieved a cookie!");
