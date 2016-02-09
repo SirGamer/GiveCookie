@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener{
 		$block = $player->level->getBlock(new Vector3((int) $player->x, (int) ($player->y - 1), (int) $player->z));
 		if($block->getId() === 35 && $block->getDamage() === 1) {
 			$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
-			$player->sendTip(TextFormat::GRAY . "{§dGiveCookie}" . TextFormat::GREEN . "You've received a cookie!");
+			$player->sendTip(TextFormat::GRAY . "[" . TextFormat::YELLOW . "Give-Cookie" . TextFormat::GRAY . "]" . TextFormat::GREEN . "You've received a cookie!");
 		}
 	}
 }
