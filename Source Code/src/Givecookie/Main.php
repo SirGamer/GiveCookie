@@ -12,7 +12,7 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener{
 	 public function onLoad() {
-		$this->getLogger()->info("Givecookie plugin.");
+		$this->getLogger()->info("This plugin is Givecookie plugin.");
 	    $this->getLogger()->info("Made By ZINGDING.");
 	}
 		public function onEnable() {
