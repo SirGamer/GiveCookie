@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener{
 	      	   $player = $event->getPlayer ();
                    $slot = $event->getPlayer->getInventory()->getItemInHand();
   	      	   $player->getInventory()->addItem(new Item(357, 0, 1 ));
- 	      	   $slot->getID() == (ITEM::COOKIE);
+ 	      	   $slot->getID() == ITEM::COOKIE);
 	      	   $player->sendTip(TextFormat::GRAY . ">" . TextFormat::GREEN . "You've recieved a cookie!");
 	                
 	      }
