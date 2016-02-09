@@ -1,7 +1,9 @@
 name: Givecookie
 main: Givecookie\Main
-version: "1.0.0-release"
+version: "1.0-release"
 author: ZINGDING
 api: 
 - 2.0.0
 - 1.12.1
+
+//This plugin has ZINGDING-EULA.
