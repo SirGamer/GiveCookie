@@ -25,8 +25,7 @@ class Main extends PluginBase implements Listener{
 		 public function onPlayerMove(PlayerMoveEvent $event) {
 		 $block = $event->getPlayer()->getLevel()->getBlock($event->getPlayer()->getPosition()->subtract(0,1,0));
 	      if($block->getId() === 35 && $block->getDamage() ===1 ) {
-	                 $item = 
-                   	 $event->getPlayer ()->additem ($item);
+	                
 	      }
 
     
