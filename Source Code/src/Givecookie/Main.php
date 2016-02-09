@@ -8,6 +8,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\Event;
 use pocketmine\block\Block;
 use pocketmine\item\item;
+use pocketmine\utils\Text;
 
 class Main extends PluginBase implements Listener{
 	 public function onLoad() {
