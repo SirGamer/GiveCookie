@@ -2,7 +2,7 @@
 
 namespace Givecookie;
 
-use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\event\player\PlayerMoveEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\item\Item;
@@ -24,8 +24,18 @@ class Main extends PluginBase implements Listener{
 	$this->getLogger()->emergency("§dGiveCookie Plugin is Disabled.");
 		}
 	
-	public function playerInteract(PlayerInteractEvent $event) {
-		if($event->getBlock ()->getId () == 35 && $event->getBlock ()->getDamage () == 1) {
+	public function onPlayerMove(PlayerMoveEvent $event) {
+		if ($player == null) return;
+		if ($player->getLevel () == null) return;
+		
+		// under
+		$x = ( int ) round ( $player->x - 0.5 );
+		$y = ( int ) round ( $player->y - 1 );
+		$z = ( int ) round ( $player->z - 0.5 );
+		
+		$id = $player->getLevel ()->getBlockIdAt ( $x, $y, $z );
+		$data = $player->getLevel ()->getBlockDataAt ( $x, $y, $z );
+		if($id == 35 && $data == 1) {
 		$player = $event->getPlayer();	
 		$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
 	    $player->sendTip(TextFormat::GRAY . "{§dGiveCookie}" . TextFormat::GREEN . "You've received a cookie!");
