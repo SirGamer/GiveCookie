@@ -1,6 +1,6 @@
 name: GiveCookie
 main: Givecookie\Main
-version: "4.6-release"
+version: "5.0-release"
 author: ZINGDING
 api: 
 - 2.0.0
