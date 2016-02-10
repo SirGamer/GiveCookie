@@ -25,6 +25,8 @@ class Main extends PluginBase implements Listener{
 		}
 	
 	public function onPlayerMove(PlayerMoveEvent $event) {
+		$player = $event->getPlayer();
+		
 		if ($player == null) return;
 		if ($player->getLevel () == null) return;
 		
@@ -35,12 +37,20 @@ class Main extends PluginBase implements Listener{
 		
 		$id = $player->getLevel ()->getBlockIdAt ( $x, $y, $z );
 		$data = $player->getLevel ()->getBlockDataAt ( $x, $y, $z );
-		//#28 ~ #37까지의 라인은 hm님의 Trampoline에서 복붙해옴. 제가 직접 코드 짜는 것 보단 잘 짜신 흠님 것을 님이 보고 공부하시는 것이
+		//#30 ~ #37까지의 라인은 hm님의 Trampoline에서 복붙해옴. 제가 직접 코드 짜는 것 보단 잘 짜신 흠님 것을 님이 보고 공부하시는 것이
 		//도움이 될 듯 하여 올림. 절대 물외한인이 귀찮아서가 아님.
-		if($id == 35 && $data == 1) {
-		$player = $event->getPlayer();	
-		$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
-	    $player->sendTip(TextFormat::GRAY . "{§dGiveCookie}" . TextFormat::GREEN . "You've received a cookie!");
+		switch($id) {
+			case 35:
+				if($data == 1) {
+					$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
+					$player->sendTip(TextFormat::GRAY . "{§dGiveCookie}" . TextFormat::GREEN . "You've received a cookie!");
+				}
+				if($data == 4) {
+					$player->getInventory()->addItem(new Item(ITEM::BREAD, 0, 1));
+				}
+				break;
+			default:
+				break;
 		}
 	}
 }
