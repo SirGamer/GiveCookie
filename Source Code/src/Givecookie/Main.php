@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener{
 			case 35:
 				if($data == 1) {
 					$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
-					$player->sendTip(TextFormat::GRAY . "{§dGiveCookie}" . TextFormat::GREEN . "You've received a cookie!");
+					$player->sendTip(TextFormat::GRAY . "GiveCookie}" . T. TextFormat::GREEN . "You've received a cookie!");
 				}
 				
 				break;
