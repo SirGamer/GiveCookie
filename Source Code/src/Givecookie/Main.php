@@ -11,18 +11,18 @@ use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener{
 	public function onLoad() {
-		$this->getLogger()->info(TextFormat::GRAY . ">" . TextFormat::GREEN . "Plugin being prepared...");
-	        $this->getLogger()->info(TextFormat::GRAY . ">" . TextFormat::GREEN . "Plugin prepared.");
+		$this->getLogger()->info(TextFormat::GRAY . "> " . TextFormat::GREEN . "Plugin being prepared...");
+	        $this->getLogger()->info(TextFormat::GRAY . "> " . TextFormat::GREEN . "Plugin prepared.");
 
 	}
 	public function onEnable() {
-	$this->getLogger()->info(TextFormat::GRAY . ">" . TextFormat::GREEN . "Plugin enabled.");
+	$this->getLogger()->info(TextFormat::GRAY . "> " . TextFormat::GREEN . "Plugin enabled.");
 	$this->getLogger()->info(TextFormat::RED . "This plugin's license can be found at: https://github.com/organization/GiveCookie.");
 	$this->getServer()->getPluginManager()->registerEvents($this,$this);
 	}
 	
 	public function onDisable() {
-	$this->getLogger()->info(TextFormat::GRAY . ">" . TextFormat::RED . "Plugin disabled.");
+	$this->getLogger()->info(TextFormat::GRAY . "> " . TextFormat::RED . "Plugin disabled.");
 		}
 	
 	public function onPlayerMove(PlayerMoveEvent $event) {
@@ -43,7 +43,7 @@ class Main extends PluginBase implements Listener{
 			case 35:
 				if($data == 1) {
 					$player->getInventory()->addItem(new Item(ITEM::COOKIE, 0, 1));
-					$player->sendPopup(TextFormat::GRAY . "GiveCookie:\n" . TextFormat::YELLOW . ">" . TextFormat::GREEN . "You've received a cookie!");
+					$player->sendPopup(TextFormat::GRAY . "GiveCookie:\n" . TextFormat::YELLOW . "> " . TextFormat::GREEN . "You've received a cookie!");
 				}
 				
 				break;
